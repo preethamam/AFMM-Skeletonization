@@ -1,0 +1,9 @@
+afmm.c
+pybind_afmm.cpp
+setup.py
+pyafmm.egg-info/PKG-INFO
+pyafmm.egg-info/SOURCES.txt
+pyafmm.egg-info/dependency_links.txt
+pyafmm.egg-info/not-zip-safe
+pyafmm.egg-info/requires.txt
+pyafmm.egg-info/top_level.txt

@@ -1,0 +1,65 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug AFMM (Windows)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/afmm.exe",
+            "args": ["example.png", "100", "1"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:\\msys64\\ucrt64\\bin\\gdb.exe",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "C/C++: gcc.exe build active file",
+            "windows": {
+                "program": "${workspaceFolder}/afmm.exe"
+            }
+        },
+        {
+            "name": "Debug AFMM (Linux/MacOS)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/afmm",
+            "args": ["example.png", "100", "1"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "C/C++: gcc.exe build active file",
+            "linux": {
+                "miDebuggerPath": "/usr/bin/gdb"
+            },
+            "osx": {
+                "miDebuggerPath": "/usr/local/bin/gdb",
+                "MIMode": "lldb"
+            }
+        },
+        {
+            "name": "Run Release",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "${workspaceFolder}/afmm.exe",
+            "runtimeArgs": ["example.png", "100", "1"],
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "Build Release"
+        }
+    ]
+}

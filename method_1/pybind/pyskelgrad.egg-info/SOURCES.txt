@@ -1,0 +1,9 @@
+pybind_skelgrad.cpp
+setup.py
+skeletongrad.c
+pyskelgrad.egg-info/PKG-INFO
+pyskelgrad.egg-info/SOURCES.txt
+pyskelgrad.egg-info/dependency_links.txt
+pyskelgrad.egg-info/not-zip-safe
+pyskelgrad.egg-info/requires.txt
+pyskelgrad.egg-info/top_level.txt
