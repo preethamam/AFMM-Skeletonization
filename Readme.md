@@ -41,6 +41,9 @@
 | ![example](images/example.png) | | | | | |
 | Execution time (seconds) | | 1000 | 1000 | 1000 | 1000 |
 
+# Usage
+All the installation and execution details are provided in the respective programming languages, `C`, `Cython`, `Pybind`  and `Python` folders in [method_1](/method_1) and [method_2](/method_2). Please refer to the `Readme.md` files in these folders.
+
 # Citations
 Binary image skeletonization algorithm based on the AFMM and Tolerance-based feature transforms are available to the public. If you use this specific methods in your research, please use the following BibTeX entry to cite:
 ## Original articles
