@@ -9,6 +9,23 @@
 2. An augmented fast marching method for computing skeletons and centerlines and Tolerance-Based Feature Transforms in combination are implemented in the [method_2](/method_2) folder. This AFMM method is a exact version from the original implementation of Alexandru et.al. [AFMM Star Implementation](https://webspace.science.uu.nl/~telea001/uploads/Software/AFMM/). This method is implemented in [The Go Programming Language](https://go.dev/) by [João Ramos](https://github.com/Joao-R), original implementation can be found in [afmm](https://github.com/Joao-R/afmm). In [method_2](/method_2) folder you will find the ported implementations in `C`, `Python`, `Cython` and `Pybind`. Pybind implementations are Pythonic, exactly get `C` release performance and easy to setup for any Python virtual environment like `Anaconda`. `Cython` implementation is also quite similar to `C` performance. However it was observed that for a large image [example.png](/images/example.png) it was 4-5 times slower than the `Go`. In contrast, native `Python` implementation is computationally slowest. In this implementation, there are three main routines in the package, the first is a distance transform of the binary mask using the fast marching method (FMM). Second, this FMM is augmented to take into account the source pixel at the boundary with (AFMM). This function returns the discontinuity magnitude field of these sources, implying a centerline. Third, the all-in-one function Skeletonize which takes in a binary picture (either 3 or 2-channels) and a threshold *`t`*. It performs AFMM and then thresholds the discontinuity field to extract a new grayscale image.Image containing the skeleton and ignoring boundary effects smaller than *`t`* pixels. Lastly, you will obtain a skeleton after further skeletonizing using the `skimage.morphology skeletonize` routine to ensure the final skeleton of a binary image is *1-pixel* thick.
 
 # Example images and skeletonization results:
+## Method 1 (AFMM)
+| Images | C | Python | Cython | Pybind|
+| --- | --- | --- | --- | --- |
+| ![mushroom](images/mushroom.png) | ![mushroom](method_1/c/mushroom_m1_c.png) | ![mushroom](method_1/python/mushroom_m1_python.png) | ![mushroom](method_1/cython/mushroom_m1_cython.png) | ![mushroom](method_1/pybind/mushroom_m1_pybind.png) |
+| Execution time (seconds) | 0.017 | 0.168 | 0.008 | 0.005 |
+| ![keyhole](images/keyhole.png) | ![keyhole](method_1/c/keyhole_m1_c.png) | ![keyhole](method_1/python/keyhole_m1_python.png) |  ![keyhole](method_1/cython/keyhole_m1_cython.png) |  ![keyhole](method_1/pybind/keyhole_m1_pybind.png)|
+| Execution time (seconds) | 1000 | 0.283 | 0.016 | 1000 |
+| ![bagel](images/bagel.png) | ![bagel](method_1/c/bagel_m1_c.png) | ![bagel](method_1/python/bagel_m1_python.png) | ![bagel](method_1/cython/bagel_m1_cython.png) | ![bagel](method_1/pybind/bagel_m1_pybind.png) |
+| Execution time (seconds) | 0.023 | 0.219 | 0.015 | 0.015 |
+| ![crack](images/crack.png) | ![crack](method_1/c/crack_m1_c.png) | ![crack](method_1/python/crack_m1_python.png) | ![crack](method_1/cython/crack_m1_cython.png) | ![crack](method_1/pybind/crack_m1_pybind.png) |
+| Execution time (seconds) | 1000 | 3.796 | 0.313 | 1000 |
+| ![crack2](images/crack2.png) | ![crack](method_1/c/crack2_m1_c.png) | ![crack](method_1/python/crack2_m1_python.png) | ![crack](method_1/cython/crack2_m1_cython.png) | ![crack](method_1/pybind/crack2_m1_pybind.png) |
+| Execution time (seconds) | 1.548 | 5.327 | 0.693 | 0.499 |
+| ![example](images/example.png) | | | | |
+| Execution time (seconds) | 1000 | 1000 | 1000 | 1000 |
+
+## Method 2 (AFMM + Tolerance-based feature transforms)
 | Images | C | Python | Cython | Pybind|
 | --- | --- | --- | --- | --- |
 | ![mushroom](images/mushroom.png) | ![mushroom](method_1/c/mushroom_m1_c.png) | ![mushroom](method_1/python/mushroom_m1_python.png) | ![mushroom](method_1/cython/mushroom_m1_cython.png) | ![mushroom](method_1/pybind/mushroom_m1_pybind.png) |
