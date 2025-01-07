@@ -41,6 +41,32 @@
 | ![example](images/example.png) | | | | | |
 | Execution time (seconds) | | 1000 | 1000 | 1000 | 1000 |
 
+# Citations
+Image stitching datasets for cracks are available to the public. If you use this specific dataset (related to cracks) in your research, please use the following BibTeX entry to cite:
+[1].
+```bibtex
+@incollection{telea2002augmented,
+  title={An augmented fast marching method for computing skeletons and centerlines},
+  author={Telea, Alexandru and Van Wijk, Jarke J},
+  booktitle={EPRINTS-BOOK-TITLE},
+  year={2002},
+  publisher={University of Groningen, Johann Bernoulli Institute for Mathematics and~…}
+}
+```
+[2]. 
+```bibtex
+@inproceedings{reniers2007tolerance,
+  title={Tolerance-based feature transforms},
+  author={Reniers, Dennie and Telea, Alexandru},
+  booktitle={Advances in Computer Graphics and Computer Vision: International Conferences VISAPP and GRAPP 2006, Set{\'u}bal, Portugal, February 25-28, 2006, Revised Selected Papers},
+  pages={187--200},
+  year={2007},
+  organization={Springer}
+}
+```
 
+# Acknowledgements
+I thank João Ramos for his invaluable time discussing on the possible solutions for porting the original `Go` code and his efforts for making the `Go` code public. I thank Nicholas Howe for writing the Method 1 `MATLAB MEX` code and making it an open-source. Lastly, I thank Aniketh Manjunath ([vma1996](https://github.com/vma1996)), for his invaluable time in optimizing the Method 2 Python code by JIT compilation.
 
-
+# Feedback
+Please rate and provide feedback for the further improvements.
