@@ -8,24 +8,27 @@ import afmm
 
 def main():
     # Load image
-    image = Image.open("../../imgs/crack 2.png")
+    image = Image.open("../../images/example.png")
 
     # Get skeleton
-    threshold = 5  # Adjust as needed
+    threshold = 35  # Adjust as needed
 
     # FMM method
     fmm_method = 'afmm'  # "fmm" or "afmm"
 
     # Parse image type
-    parse_image_type = 'binary'  # "binary" or "rgb"
+    parse_image_type = 'rgb'  # "binary" or "rgb"
 
     # Dislay Delta U and DT
     show_afmm_deltaU_dt = False  # True or False
 
     # Skeletonize the image
+    start1 = time.time()
     dt_img, deltaU_img, skeleton = afmm.get_skeleton(
         image, threshold, fmm_method, parse_image_type, thinning=True
     )
+    end1 = time.time()
+    print(f"AFMM TBFT Skeletonize Execution Time: {end1 - start1:.4f} seconds.")
     
     # Display images
     if fmm_method == "fmm":
