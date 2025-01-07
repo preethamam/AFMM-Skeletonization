@@ -42,8 +42,8 @@
 | Execution time (seconds) | | 1000 | 1000 | 1000 | 1000 |
 
 # Citations
-Image stitching datasets for cracks are available to the public. If you use this specific dataset (related to cracks) in your research, please use the following BibTeX entry to cite:
-[1].
+Binary image skeletonization algorithm based on the AFMM and Tolerance-based feature transforms are available to the public. If you use this specific methods in your research, please use the following BibTeX entry to cite:
+## Original articles
 ```bibtex
 @incollection{telea2002augmented,
   title={An augmented fast marching method for computing skeletons and centerlines},
@@ -52,9 +52,7 @@ Image stitching datasets for cracks are available to the public. If you use this
   year={2002},
   publisher={University of Groningen, Johann Bernoulli Institute for Mathematics and~…}
 }
-```
-[2]. 
-```bibtex
+
 @inproceedings{reniers2007tolerance,
   title={Tolerance-based feature transforms},
   author={Reniers, Dennie and Telea, Alexandru},
@@ -65,8 +63,12 @@ Image stitching datasets for cracks are available to the public. If you use this
 }
 ```
 
+## Original code repositories
+[1]. Nicholas Howe (2025). Better Skeletonization (https://www.mathworks.com/matlabcentral/fileexchange/11123-better-skeletonization), MATLAB Central File Exchange. Retrieved January 7, 2025. <br />
+[1]. João Ramos (2025). afmm (https://github.com/Joao-R/afmm), GitHub Repository. Retrieved January 7, 2025.
+
 # Acknowledgements
-I thank João Ramos for his invaluable time discussing on the possible solutions for porting the original `Go` code and his efforts for making the `Go` code public. I thank Nicholas Howe for writing the Method 1 `MATLAB MEX` code and making it an open-source. Lastly, I thank Aniketh Manjunath ([vma1996](https://github.com/vma1996)), for his invaluable time in optimizing the Method 2 Python code by JIT compilation.
+I thank João Ramos for his invaluable time discussing on the possible solutions for porting the original `Go` code and his efforts for making the `Go` code public. I thank Nicholas Howe for writing the Method 1 `MATLAB MEX` code and making it an open-source. I thank Aniketh Manjunath ([vma1996](https://github.com/vma1996)), for his invaluable time in optimizing the Method 2 Python code by JIT compilation. Lastly, I thank Atreya Joshi and Ashwin Mahesh for the discussion and help on the usage of `Go` and its compilation.
 
 # Feedback
 Please rate and provide feedback for the further improvements.
