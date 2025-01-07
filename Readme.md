@@ -20,7 +20,7 @@
 | ![crack](images/crack.png) | | | | |
 | Execution time (seconds) | 1000 | 3.796 | 0.313 | 1000 |
 | ![crack2](images/crack2.png) | | | | |
-| Execution time (seconds) | 1.548 | 5.327 | 0.693 | 1000 |
+| Execution time (seconds) | 1.548 | 5.327 | 0.693 | 0.499 |
 | ![example](images/example.png) | | | | |
 | Execution time (seconds) | 1000 | 1000 | 1000 | 1000 |
 
