@@ -28,18 +28,18 @@
 ## Method 2 (AFMM + Tolerance-based feature transforms)
 | Images | FMM | C | Python | Cython | Pybind|
 | --- | --- | --- | --- | --- | --- |
-| ![mushroom](images/mushroom.png) |  | ![mushroom](method_2/c/mushroom_m2_c.png) | ![mushroom](method_1/python/mushroom_m1_python.png) | ![mushroom](method_2/cython/mushroom_m2_cython.png) | ![mushroom](method_1/pybind/mushroom_m1_pybind.png) |
-| Execution time (seconds) | 0.000 (C) | 0.001 | 0.168 | 0.015 | 0.005 |
-| ![keyhole](images/keyhole.png) | | ![keyhole](method_2/c/keyhole_m2_c.png) | ![keyhole](method_1/python/keyhole_m1_python.png) |  ![keyhole](method_2/cython/keyhole_m2_cython.png) |  ![keyhole](method_1/pybind/keyhole_m1_pybind.png)|
-| Execution time (seconds) | 0.001 (C) | 0.002 | 0.283 | 0.015 | 1000 |
-| ![bagel](images/bagel.png) | | ![bagel](method_2/c/bagel_m2_c.png) | ![bagel](method_1/python/bagel_m1_python.png) | ![bagel](method_2/cython/bagel_m2_cython.png) | ![bagel](method_1/pybind/bagel_m1_pybind.png) |
-| Execution time (seconds) | 0.000 (C) | 0.002 | 0.219 | 0.015 | 0.015 |
-| ![crack](images/crack.png) | | ![crack](method_2/c/crack_m2_c.png) | ![crack](method_1/python/crack_m1_python.png) | ![crack](method_2/cython/crack_m2_cython.png) | ![crack](method_1/pybind/crack_m1_pybind.png) |
-| Execution time (seconds) | 0.009 (C) | 0.017 | 3.796 | 0.179 | 1000 |
+| ![mushroom](images/mushroom.png) | ![example](method_2/pybind/mushroom_m2_dt.png) | ![mushroom](method_2/c/mushroom_m2_c.png) | ![mushroom](method_1/python/mushroom_m1_python.png) | ![mushroom](method_2/cython/mushroom_m2_cython.png) | ![mushroom](method_2/pybind/mushroom_m2_pybind.png) |
+| Execution time (seconds) | 0.000 (C) | 0.001 | | 0.015 | 0.000 |
+| ![keyhole](images/keyhole.png) | ![example](method_2/pybind/keyhole_m2_dt.png) | ![keyhole](method_2/c/keyhole_m2_c.png) | ![keyhole](method_1/python/keyhole_m1_python.png) |  ![keyhole](method_2/cython/keyhole_m2_cython.png) |  ![keyhole](method_2/pybind/keyhole_m2_pybind.png)|
+| Execution time (seconds) | 0.001 (C) | 0.002 |  | 0.015 | 0.000 |
+| ![bagel](images/bagel.png) | ![example](method_2/pybind/bagel_m2_dt.png) | ![bagel](method_2/c/bagel_m2_c.png) | ![bagel](method_1/python/bagel_m1_python.png) | ![bagel](method_2/cython/bagel_m2_cython.png) | ![bagel](method_2/pybind/bagel_m2_pybind.png) |
+| Execution time (seconds) | 0.000 (C) | 0.002 |  | 0.015 | 0.002 |
+| ![crack](images/crack.png) | ![example](method_2/pybind/crack_m2_dt.png) | ![crack](method_2/c/crack_m2_c.png) | ![crack](method_1/python/crack_m1_python.png) | ![crack](method_2/cython/crack_m2_cython.png) | ![crack](method_2/pybind/crack_m2_pybind.png) |
+| Execution time (seconds) | 0.009 (C) | 0.017 |  | 0.179 | 0.031 |
 | ![crack2](images/crack2.png) | | ![crack2](method_2/c/crack2_m2_c.png) | ![crack](method_1/python/crack2_m1_python.png) | ![crack](method_2/cython/crack2_m2_cython.png) | ![crack](method_1/pybind/crack2_m1_pybind.png) |
-| Execution time (seconds) | 0.005 (C) | 0.008 | 5.327 | 0.111 | 0.499 |
-| ![example](images/example.png) | | ![example](method_2/c/example_m2_c.png) | | ![example](method_2/cython/example_m2_cython.png) | |
-| Execution time (seconds) | 0.378 (C) | 0.520 | 1000 | 5.924 | 1000 |
+| Execution time (seconds) | 0.005 (C) | 0.008 |  | 0.111 | 0.010 |
+| ![example](images/example.png) | ![example](method_2/pybind/example_m2_dt.png) | ![example](method_2/c/example_m2_c.png) | | ![example](method_2/cython/example_m2_cython.png) |  ![example](method_2/pybind/example_m2_pybind.png) |
+| Execution time (seconds) | 0.378 (C) | 0.520 | | 5.924 | 0.422 |
 
 # Usage
 All the installation and execution details are provided in the respective programming languages, `C`, `Cython`, `Pybind`  and `Python` folders in [method_1](/method_1) and [method_2](/method_2). Please refer to the `Readme.md` files in these folders.
