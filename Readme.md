@@ -10,7 +10,7 @@
 
 # Example images and skeletonization results:
 ## Method 1 (AFMM)
-| Images | C | Python | Cython | Pybind|
+| Images | C (unthinned) | Python | Cython | Pybind|
 | --- | --- | --- | --- | --- |
 | ![mushroom](images/mushroom.png) | ![mushroom](method_1/c/mushroom_m1_c.png) | ![mushroom](method_1/python/mushroom_m1_python.png) | ![mushroom](method_1/cython/mushroom_m1_cython.png) | ![mushroom](method_1/pybind/mushroom_m1_pybind.png) |
 | Execution time (seconds) | 0.017 | 0.168 | 0.008 | 0.005 |
@@ -26,7 +26,7 @@
 | Execution time (seconds) | 1000 | 1000 | 1000 | 1000 |
 
 ## Method 2 (AFMM + Tolerance-based feature transforms)
-| Images | FMM | C | Python | Cython | Pybind|
+| Images | FMM | C (unthinned) | Python | Cython | Pybind|
 | --- | --- | --- | --- | --- | --- |
 | ![mushroom](images/mushroom.png) | ![example](method_2/pybind/mushroom_m2_dt.png) | ![mushroom](method_2/c/mushroom_m2_c.png) | ![mushroom](method_2/python/mushroom_m2_python.png) | ![mushroom](method_2/cython/mushroom_m2_cython.png) | ![mushroom](method_2/pybind/mushroom_m2_pybind.png) |
 | Execution time (seconds) | 0.000 (C) | 0.001 | 4.422 | 0.015 | 0.000 |
