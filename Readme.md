@@ -44,6 +44,9 @@
 # Citations
 Binary image skeletonization algorithm based on the AFMM and Tolerance-based feature transforms are available to the public. If you use this specific methods in your research, please use the following BibTeX entry to cite:
 ## Original articles
+[1]. Telea, Alexandru, and Jarke J. Van Wijk. "An augmented fast marching method for computing skeletons and centerlines." In EPRINTS-BOOK-TITLE. University of Groningen, Johann Bernoulli Institute for Mathematics and Computer Science, 2002. <br />
+[2]. Reniers, Dennie, and Alexandru Telea. "Tolerance-based feature transforms." In Advances in Computer Graphics and Computer Vision: International Conferences VISAPP and GRAPP 2006, Setúbal, Portugal, February 25-28, 2006, Revised Selected Papers, pp. 187-200. Springer Berlin Heidelberg, 2007.
+
 ```bibtex
 @incollection{telea2002augmented,
   title={An augmented fast marching method for computing skeletons and centerlines},
