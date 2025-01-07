@@ -12,11 +12,17 @@
 | Images | C | Python | Cython | Pybind|
 | --- | --- | --- | --- | --- |
 | ![mushroom](images/mushroom.png) | | | | |
+| Execution time (seconds) | 1000 | 1000 | 1000 | 1000 |
 | ![keyhole](images/keyhole.png) | | | | |
+| Execution time (seconds) | 1000 | 1000 | 1000 | 1000 |
 | ![bagel](images/bagel.png) | | | | |
+| Execution time (seconds) | 1000 | 1000 | 1000 | 1000 |
 | ![crack](images/crack.png) | | | | |
+| Execution time (seconds) | 1000 | 1000 | 1000 | 1000 |
 | ![crack2](images/crack2.png) | | | | |
+| Execution time (seconds) | 1000 | 1000 | 1000 | 1000 |
 | ![example](images/example.png) | | | | |
+| Execution time (seconds) | 1000 | 1000 | 1000 | 1000 |
 
 
 
