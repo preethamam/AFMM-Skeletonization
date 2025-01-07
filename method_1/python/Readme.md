@@ -31,6 +31,14 @@ You can install the required packages using pip:
 pip install numpy matplotlib Pillow scikit-image numba joblib
 ```
 
+or
+
+Install the required Python packages:
+
+```sh
+pip install -r requirements.txt
+```
+
 ## Building the Project
 
 **Clone the repository:**

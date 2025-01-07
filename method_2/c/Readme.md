@@ -64,7 +64,7 @@ The executable `afmm.exe` can be run with the following command:
 
 - `<input_image>`: Path to the input image file.
 - `<threshold>`: Threshold value for skeletonization.
-- `<is_rgb>`: Set to `1` if the input image is RGB channels, otherwise set to `0`.
+- `<is_rgb>`: Set to `1` if the input image is RGB channels (binary image with three channels), otherwise set to `0`.
 
 ### Example
 ```sh

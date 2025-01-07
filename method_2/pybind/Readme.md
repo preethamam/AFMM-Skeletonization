@@ -68,6 +68,10 @@ stb_image.h
     ```sh
     pip install -e .
     ```
+4. Install the required Python packages:
+    ```sh
+    pip install -r requirements.txt
+    ```
 
 ## Usage
 
@@ -78,6 +82,9 @@ You can execute the AFMM skeletonization from the command line using the provide
 ```sh
 ./afmm.exe input.jpg 100 1 <input_image> <threshold> <is_rgb>
 ```
+- `<input_image>`: Path to the input image file.
+- `<threshold>`: Threshold value for skeletonization.
+- `<is_rgb>`: Set to `1` if the input image is RGB channels (binary image with three channels), otherwise set to `0`.
 
 ### Python
 

@@ -40,6 +40,14 @@ You can install the dependencies using pip:
 pip install numpy numba Pillow scikit-image matplotlib
 ```
 
+or
+
+Install the required Python packages:
+
+```sh
+pip install -r requirements.txt
+```
+
 ## Building the Project
 
 **Clone the repository:**

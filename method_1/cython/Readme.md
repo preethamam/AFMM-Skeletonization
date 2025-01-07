@@ -46,6 +46,13 @@ You can install the required packages using pip:
 ```sh
 pip install cython numpy matplotlib pillow scikit-image
 ```
+or
+
+Install the required Python packages:
+
+```sh
+pip install -r requirements.txt
+```
 
 ## Cython Compilation
 

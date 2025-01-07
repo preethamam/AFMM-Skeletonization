@@ -60,6 +60,11 @@ stb_image.h
     ```sh
     pip install -e .
     ```
+    
+4. Install the required Python packages:
+    ```sh
+    pip install -r requirements.txt
+    ```
 
 ### Usage
 
