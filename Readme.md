@@ -36,7 +36,7 @@
 | Execution time (seconds) | 0.000 (C) | 0.002 |  | 0.015 | 0.002 |
 | ![crack](images/crack.png) | ![example](method_2/pybind/crack_m2_dt.png) | ![crack](method_2/c/crack_m2_c.png) | ![crack](method_1/python/crack_m1_python.png) | ![crack](method_2/cython/crack_m2_cython.png) | ![crack](method_2/pybind/crack_m2_pybind.png) |
 | Execution time (seconds) | 0.009 (C) | 0.017 |  | 0.179 | 0.031 |
-| ![crack2](images/crack2.png) | | ![crack2](method_2/c/crack2_m2_c.png) | ![crack](method_1/python/crack2_m1_python.png) | ![crack](method_2/cython/crack2_m2_cython.png) | ![crack](method_1/pybind/crack2_m1_pybind.png) |
+| ![crack2](images/crack2.png) | ![example](method_2/pybind/crack2_m2_dt.png) | ![crack2](method_2/c/crack2_m2_c.png) | ![crack](method_1/python/crack2_m1_python.png) | ![crack](method_2/cython/crack2_m2_cython.png) | ![crack](method_1/pybind/crack2_m1_pybind.png) |
 | Execution time (seconds) | 0.005 (C) | 0.008 |  | 0.111 | 0.010 |
 | ![example](images/example.png) | ![example](method_2/pybind/example_m2_dt.png) | ![example](method_2/c/example_m2_c.png) | | ![example](method_2/cython/example_m2_cython.png) |  ![example](method_2/pybind/example_m2_pybind.png) |
 | Execution time (seconds) | 0.378 (C) | 0.520 | | 5.924 | 0.422 |
