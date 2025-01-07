@@ -386,7 +386,7 @@ class FastMarchingMethod:
 
 class Skeletonize():
     @staticmethod
-    def get_skeleton(img, t, fmm_method="afmm", parse_image_type="rgb", thinning=True):
+    def get_skeleton(img, t, fmm_method, parse_image_type, thinning=True):
         width = img.width
         height = img.height
 

@@ -59,7 +59,7 @@ def parse_binary_image(img, imgData):
     indices = xx + yy * imgData.colNum
     
     # Set values based on luminance threshold
-    mask = img_array == True
+    mask = img_array > 0
     imgData.f[indices] = mask
     imgData.T[indices] = np.where(mask, np.inf, 0)
 
