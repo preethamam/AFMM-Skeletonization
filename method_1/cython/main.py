@@ -11,7 +11,7 @@ from skelgrad import compute_skeleton_gradient
 
 def main():
     # Load image
-    img_path = "../../imgs/crack 2.png"
+    img_path = "../../images/crack2.png"
     # "../imgs/mushroom.png"
     # "../imgs/crack 2.png"
     # "../imgs/crack.bmp"
@@ -47,6 +47,10 @@ def main():
 
     # perform skeletonization
     skeleton_thinned = thin(skeleton)
+    
+    # save a image using extension
+    skeleton_thinned_pil = Image.fromarray(skeleton_thinned)
+    skeleton_thinned_pil.save("crack2_m1_cython.png")    
 
     # Display images:  Create a figure with 2 subplots (1 row, 2 columns)
     fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2)

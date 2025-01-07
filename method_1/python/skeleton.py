@@ -142,7 +142,6 @@ def compute_skeleton_gradient(img):
     nedge = 0
     ijunc = 0
     
-    first_loop = time.time()
     for j in range(jncol):
         for i in range(jnrow):
             jhood = joint_neighborhood(flat_img, i, j, nrow, ncol)
@@ -181,7 +180,6 @@ def compute_skeleton_gradient(img):
                     jhood = joint_neighborhood(flat_img, ei, ej, nrow, ncol)
                 
                 nedge += 1
-    print("First loop time: ", time.time() - first_loop)
     
     # Compute edge lengths (vectorized)
     edgelen = np.bincount(edgej)
@@ -190,9 +188,7 @@ def compute_skeleton_gradient(img):
     if njunc > 0:
         true_points = np.argwhere(img)
         if len(true_points) > 0:
-            BATCH_SIZE = 20000  # Increased batch size for better vectorization
-            
-            second_loop = time.time()
+            BATCH_SIZE = 20000  # Increased batch size for better vectorization        
             
             for batch_start in range(0, len(true_points), BATCH_SIZE):
                 batch_end = min(batch_start + BATCH_SIZE, len(true_points))
@@ -222,7 +218,6 @@ def compute_skeleton_gradient(img):
                 rad[batch_points[:, 0], batch_points[:, 1]] = min_dists
                 
                 # Process skeleton gradient for the batch
-                third_loop = time.time()
                 for idx in range(len(batch_points)):
                     i, j = batch_points[idx]
                     minjunc = min_juncs[idx]
@@ -255,9 +250,6 @@ def compute_skeleton_gradient(img):
                             else:
                                 skg[i, j] = 0
                     else:
-                        skg[i, j] = np.inf
-                    
-                print("Third loop time: ", time.time() - third_loop)
-            print("Second loop time: ", time.time() - second_loop)
+                        skg[i, j] = np.inf                    
     
     return skg, rad

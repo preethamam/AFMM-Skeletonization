@@ -34,16 +34,20 @@ def process_image(image_path):
 def main():
     
     # Image path
-    image_path = "../../imgs/mushroom.png"
+    image_path = "../../images/crack2.png"
     
     # Threshold for binary conversion
-    threshold = 15
+    threshold = 25
     
     # Process image
     skg, rad, img = process_image(image_path)
     
     # perform skeletonization
     skeleton = skeletonize(skg > threshold)
+
+    # save a image using extension
+    skeleton_thinned_pil = Image.fromarray(skeleton)
+    skeleton_thinned_pil.save("crack2_m1_pybind.png") 
     
     # Visualize results        
     fig, axes = plt.subplots(2, 2, figsize=(7, 7))

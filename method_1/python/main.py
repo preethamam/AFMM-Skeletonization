@@ -11,7 +11,7 @@ from skeleton import compute_skeleton_gradient
 
 def main():
     # Load image
-    img_path = "../../imgs/mushroom.png"
+    img_path = "../../images/bagel.png"
     # "../imgs/mushroom.png"
     # "../imgs/crack 2.png"
     # "../imgs/crack.bmp"
@@ -45,6 +45,10 @@ def main():
 
     # perform skeletonization
     skeleton_thinned = thin(skeleton)
+    
+    # save a image using extension
+    skeleton_thinned_pil = Image.fromarray(skeleton_thinned)
+    skeleton_thinned_pil.save("bagel_m1_python.png")    
 
     # Display images:  Create a figure with 2 subplots (1 row, 2 columns)
     fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2)
