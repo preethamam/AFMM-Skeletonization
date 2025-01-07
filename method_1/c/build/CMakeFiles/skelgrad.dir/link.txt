@@ -1,0 +1,3 @@
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E rm -f CMakeFiles\skelgrad.dir/objects.a
+C:\msys64\ucrt64\bin\ar.exe qc CMakeFiles\skelgrad.dir/objects.a @CMakeFiles\skelgrad.dir\objects1.rsp
+C:\msys64\ucrt64\bin\gcc.exe -g -Wl,--whole-archive CMakeFiles\skelgrad.dir/objects.a -Wl,--no-whole-archive -o skelgrad.exe -Wl,--out-implib,libskelgrad.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\skelgrad.dir\linkLibs.rsp

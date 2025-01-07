@@ -1,0 +1,14 @@
+[
+{
+  "directory": "D:/OneDrive/Education Materials/Applications/Toolboxes/Python/My Functions/AFMM Skeletonization/method_1/c/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe  @CMakeFiles/skelgrad.dir/includes_C.rsp -g -std=gnu99 -Wall -Wextra -Wpedantic -Werror -o CMakeFiles\\skelgrad.dir\\src\\main.c.obj -c \"D:\\OneDrive\\Education Materials\\Applications\\Toolboxes\\Python\\My Functions\\AFMM Skeletonization\\method_1\\c\\src\\main.c\"",
+  "file": "D:/OneDrive/Education Materials/Applications/Toolboxes/Python/My Functions/AFMM Skeletonization/method_1/c/src/main.c",
+  "output": "CMakeFiles/skelgrad.dir/src/main.c.obj"
+},
+{
+  "directory": "D:/OneDrive/Education Materials/Applications/Toolboxes/Python/My Functions/AFMM Skeletonization/method_1/c/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe  @CMakeFiles/skelgrad.dir/includes_C.rsp -g -std=gnu99 -Wall -Wextra -Wpedantic -Werror -o CMakeFiles\\skelgrad.dir\\src\\skeletongrad.c.obj -c \"D:\\OneDrive\\Education Materials\\Applications\\Toolboxes\\Python\\My Functions\\AFMM Skeletonization\\method_1\\c\\src\\skeletongrad.c\"",
+  "file": "D:/OneDrive/Education Materials/Applications/Toolboxes/Python/My Functions/AFMM Skeletonization/method_1/c/src/skeletongrad.c",
+  "output": "CMakeFiles/skelgrad.dir/src/skeletongrad.c.obj"
+}
+]
