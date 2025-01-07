@@ -31,10 +31,10 @@ def test_skeletonization(image_path, threshold, use_rgb):
     s1 = time.time()
     skeleton, deltaU, dt = pyafmm.skeletonize(binary, threshold, is_rgb)
     s2 = time.time()
-    print('AFMM time taken:', s2 - s1)
+    print(f"AFMM time taken: {s2 - s1:.12f}")
     
     # perform skeletonization
-    skeleton = skeletonize(skeleton)
+    skeleton = skeletonize(skeleton)        
     
     # Plot results
     fig, axes = plt.subplots(2, 2, figsize=(7, 7))
@@ -56,16 +56,27 @@ def test_skeletonization(image_path, threshold, use_rgb):
     
     plt.tight_layout()
     plt.show()
+    
+    plt.figure(3)
+    plt.imshow(dt, cmap='viridis')
+    plt.axis('off')
+    plt.savefig('crack2_m2_dt.png', bbox_inches='tight', pad_inches=0)
+    plt.close(fig) 
+    
+    # save a image using extension
+    skeleton_thinned_pil = Image.fromarray(skeleton)
+    skeleton_thinned_pil.save("crack2_m2_pybind.png") 
+    
 
 if __name__ == '__main__':
     # Image path
-    image_path = "../../imgs/example.png"
+    image_path = "../../images/crack2.png"
     
     # Threshold
-    threshold = 100.0
+    threshold = 35.0
     
     # Try with RGB mode
-    test_skeletonization(image_path, threshold, use_rgb=True)
+    # test_skeletonization(image_path, threshold, use_rgb=True)
     
     # Try with grayscale mode
-    # test_skeletonization(image_path, use_rgb=False)
+    test_skeletonization(image_path, threshold, use_rgb=False)
