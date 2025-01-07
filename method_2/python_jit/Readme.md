@@ -51,14 +51,6 @@ cd <repository-directory>
 
 ## Usage
 
-### Cython Compilation
-
-If you have any Cython extensions, you can compile them using the following command:
-
-```sh
-python setup.py build_ext --inplace
-```
-
 ### Running the Skeletonization
 
 1. Place the image you want to process in the appropriate directory (e.g., `../../imgs/example.png`).
