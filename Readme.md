@@ -25,8 +25,6 @@
 | ![example](images/example.png) |![example](method_1/c/example_m1_c.png) | ![example](method_1/python/example_m1_python.png) | ![example](method_1/cython/example_m1_cython.png) |  ![example](method_1/pybind/example_m1_pybind.png) |
 | Execution time (seconds) | 193.839 | 2107.578 | 333.321 | 219.317 |
 
-Overall, it can be observed that for the regular structures, Method 1 worked well in contrast to Method 2. Both methods produced similar skeletons for the irregular structures such as cracks and random blob. However, the execution time was the downside of the Method 1. Perhaps Method 1 requires a careful optimized re-implementation using datastructures and parallel paradigm to speed-up the computational time.
-
 ## Method 2 (AFMM + Tolerance-based feature transforms)
 | Images | FMM | C (unthinned) | Python | Cython | Pybind|
 | --- | --- | --- | --- | --- | --- |
@@ -42,6 +40,8 @@ Overall, it can be observed that for the regular structures, Method 1 worked wel
 | Execution time (seconds) | 0.005 (C) | 0.008 | 4.694 | 0.111 | 0.010 |
 | ![example](images/example.png) | ![example](method_2/pybind/example_m2_dt.png) | ![example](method_2/c/example_m2_c.png) | ![example](method_2/python/example_m2_python.png) | ![example](method_2/cython/example_m2_cython.png) |  ![example](method_2/pybind/example_m2_pybind.png) |
 | Execution time (seconds) | 0.378 (C) | 0.520 | 22.769 | 5.924 | 0.422 |
+
+Overall, it can be observed that for the regular structures, Method 1 worked well in contrast to Method 2. Both methods produced similar skeletons for the irregular structures such as cracks and random blob. However, the execution time was the downside of the Method 1. Perhaps Method 1 requires a careful optimized re-implementation using datastructures and parallel paradigm to speed-up the computational time.
 
 # Usage
 All the installation and execution details are provided in the respective programming languages, `C`, `Cython`, `Pybind`  and `Python` folders in [method_1](/method_1) and [method_2](/method_2). Please refer to the `Readme.md` files in these folders. Please note that the implementations are tested using Visual Studio Code on `Windows 11`. I have included the `CMake` files for the `C` programs and all the implementations should work on `macOS` and `Linux`.
