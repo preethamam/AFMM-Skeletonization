@@ -25,6 +25,8 @@
 | ![example](images/example.png) |![example](method_1/c/example_m1_c.png) | ![example](method_1/python/example_m1_python.png) | ![example](method_1/cython/example_m1_cython.png) |  ![example](method_1/pybind/example_m1_pybind.png) |
 | Execution time (seconds) | 193.839 | 2107.578 | 333.321 | 219.317 |
 
+Overall, it can be observed that for the regular structures, Method 1 worked well in contrast to Method 2. Both methods produced similar skeletons for the irregular structures such as cracks and random blob. However, the execution time was the downside of the Method 1. Perhaps Method 1 requires a careful optimized re-implementation using datastructures and parallel paradigm to speed-up the computational time.
+
 ## Method 2 (AFMM + Tolerance-based feature transforms)
 | Images | FMM | C (unthinned) | Python | Cython | Pybind|
 | --- | --- | --- | --- | --- | --- |
