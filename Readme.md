@@ -15,11 +15,11 @@
 | ![mushroom](images/mushroom.png) | ![mushroom](method_1/c/mushroom_m1_c.png) | ![mushroom](method_1/python/mushroom_m1_python.png) | ![mushroom](method_1/cython/mushroom_m1_cython.png) | ![mushroom](method_1/pybind/mushroom_m1_pybind.png) |
 | Execution time (seconds) | 0.017 | 0.168 | 0.008 | 0.005 |
 | ![keyhole](images/keyhole.png) | ![keyhole](method_1/c/keyhole_m1_c.png) | ![keyhole](method_1/python/keyhole_m1_python.png) |  ![keyhole](method_1/cython/keyhole_m1_cython.png) |  ![keyhole](method_1/pybind/keyhole_m1_pybind.png)|
-| Execution time (seconds) | 1000 | 0.283 | 0.016 | 1000 |
+| Execution time (seconds) | 0.033 | 0.283 | 0.016 | 0.017 |
 | ![bagel](images/bagel.png) | ![bagel](method_1/c/bagel_m1_c.png) | ![bagel](method_1/python/bagel_m1_python.png) | ![bagel](method_1/cython/bagel_m1_cython.png) | ![bagel](method_1/pybind/bagel_m1_pybind.png) |
 | Execution time (seconds) | 0.023 | 0.219 | 0.015 | 0.015 |
 | ![crack](images/crack.png) | ![crack](method_1/c/crack_m1_c.png) | ![crack](method_1/python/crack_m1_python.png) | ![crack](method_1/cython/crack_m1_cython.png) | ![crack](method_1/pybind/crack_m1_pybind.png) |
-| Execution time (seconds) | 1000 | 3.796 | 0.313 | 1000 |
+| Execution time (seconds) | 0.725 | 3.796 | 0.313 | 0.250 |
 | ![crack2](images/crack2.png) | ![crack2](method_1/c/crack2_m1_c.png) | ![crack](method_1/python/crack2_m1_python.png) | ![crack](method_1/cython/crack2_m1_cython.png) | ![crack](method_1/pybind/crack2_m1_pybind.png) |
 | Execution time (seconds) | 1.548 | 5.327 | 0.693 | 0.499 |
 | ![example](images/example.png) | | | | |
