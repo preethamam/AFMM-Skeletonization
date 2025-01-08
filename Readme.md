@@ -42,7 +42,7 @@
 | Execution time (seconds) | 0.378 (C) | 0.520 | 22.769 | 5.924 | 0.422 |
 
 # Usage
-All the installation and execution details are provided in the respective programming languages, `C`, `Cython`, `Pybind`  and `Python` folders in [method_1](/method_1) and [method_2](/method_2). Please refer to the `Readme.md` files in these folders. Please note that the implementations are tested on Visual Studio Code on `Windows 11`. I have included the `CMake` files for the `C` programs and all the implementations should work on `macOS` and `Linux`.
+All the installation and execution details are provided in the respective programming languages, `C`, `Cython`, `Pybind`  and `Python` folders in [method_1](/method_1) and [method_2](/method_2). Please refer to the `Readme.md` files in these folders. Please note that the implementations are tested using Visual Studio Code on `Windows 11`. I have included the `CMake` files for the `C` programs and all the implementations should work on `macOS` and `Linux`.
 
 # Citations
 Binary image skeletonization algorithm based on the AFMM and Tolerance-based feature transforms are available to the public. If you use this specific methods in your research, please use the following BibTeX entry to cite:
