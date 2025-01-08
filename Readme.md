@@ -10,20 +10,20 @@
 
 # Example images and skeletonization results:
 ## Method 1 (AFMM)
-| Images | C (unthinned) | Python | Cython | Pybind|
+| Images | C (unthinned) | Python | Cython | Pybind |
 | --- | --- | --- | --- | --- |
 | ![mushroom](images/mushroom.png) | ![mushroom](method_1/c/mushroom_m1_c.png) | ![mushroom](method_1/python/mushroom_m1_python.png) | ![mushroom](method_1/cython/mushroom_m1_cython.png) | ![mushroom](method_1/pybind/mushroom_m1_pybind.png) |
-| Execution time (seconds) | 0.017 | 0.168 | 0.008 | 0.005 |
+| Execution time (seconds) | 0.005 | 0.168 | 0.008 | 0.005 |
 | ![keyhole](images/keyhole.png) | ![keyhole](method_1/c/keyhole_m1_c.png) | ![keyhole](method_1/python/keyhole_m1_python.png) |  ![keyhole](method_1/cython/keyhole_m1_cython.png) | ![keyhole](method_1/pybind/keyhole_m1_pybind.png) |
-| Execution time (seconds) | 0.033 | 0.283 | 0.016 | 0.017 |
+| Execution time (seconds) | 0.008 | 0.283 | 0.016 | 0.017 |
 | ![bagel](images/bagel.png) | ![bagel](method_1/c/bagel_m1_c.png) | ![bagel](method_1/python/bagel_m1_python.png) | ![bagel](method_1/cython/bagel_m1_cython.png) | ![bagel](method_1/pybind/bagel_m1_pybind.png) |
-| Execution time (seconds) | 0.023 | 0.219 | 0.015 | 0.015 |
+| Execution time (seconds) | 0.006 | 0.219 | 0.015 | 0.015 |
 | ![crack](images/crack.png) | ![crack](method_1/c/crack_m1_c.png) | ![crack](method_1/python/crack_m1_python.png) | ![crack](method_1/cython/crack_m1_cython.png) | ![crack](method_1/pybind/crack_m1_pybind.png) |
-| Execution time (seconds) | 0.725 | 3.796 | 0.313 | 0.250 |
+| Execution time (seconds) | 0.184 | 3.796 | 0.313 | 0.250 |
 | ![crack2](images/crack2.png) | ![crack2](method_1/c/crack2_m1_c.png) | ![crack](method_1/python/crack2_m1_python.png) | ![crack](method_1/cython/crack2_m1_cython.png) | ![crack](method_1/pybind/crack2_m1_pybind.png) |
-| Execution time (seconds) | 1.548 | 5.327 | 0.693 | 0.499 |
-| ![example](images/example.png) | | | | |
-| Execution time (seconds) | 1000 | 1000 | 1000 | 1000 |
+| Execution time (seconds) | 0.393 | 5.327 | 0.693 | 0.499 |
+| ![example](images/example.png) |![example](method_1/c/example_m1_c.png) | ![example](method_1/python/example_m1_python.png) | ![example](method_1/cython/example_m1_cython.png) |  ![example](method_1/pybind/example_m1_pybind.png) |
+| Execution time (seconds) | 193.839 | 2107.578 | 333.321 | 219.317 |
 
 ## Method 2 (AFMM + Tolerance-based feature transforms)
 | Images | FMM | C (unthinned) | Python | Cython | Pybind|
@@ -42,7 +42,7 @@
 | Execution time (seconds) | 0.378 (C) | 0.520 | 22.769 | 5.924 | 0.422 |
 
 # Usage
-All the installation and execution details are provided in the respective programming languages, `C`, `Cython`, `Pybind`  and `Python` folders in [method_1](/method_1) and [method_2](/method_2). Please refer to the `Readme.md` files in these folders.
+All the installation and execution details are provided in the respective programming languages, `C`, `Cython`, `Pybind`  and `Python` folders in [method_1](/method_1) and [method_2](/method_2). Please refer to the `Readme.md` files in these folders. Please note that the implementations are tested on Visual Studio Code on `Windows 11`. I have included the `CMake` files for the `C` programs and all the implementations should work on `macOS` and `Linux`.
 
 # Citations
 Binary image skeletonization algorithm based on the AFMM and Tolerance-based feature transforms are available to the public. If you use this specific methods in your research, please use the following BibTeX entry to cite:
@@ -74,7 +74,7 @@ Binary image skeletonization algorithm based on the AFMM and Tolerance-based fea
 [2]. João Ramos (2025). afmm (https://github.com/Joao-R/afmm), GitHub Repository. Retrieved January 7, 2025.
 
 # Acknowledgements
-I thank João Ramos for his invaluable time discussing on the possible solutions for porting the original `Go` code and his efforts for making the `Go` code public. I thank Nicholas Howe for writing the Method 1 `MATLAB MEX` code and making it an open-source. I thank Aniketh Manjunath ([vma1996](https://github.com/vma1996)), for his invaluable time in optimizing the Method 2 Python code by JIT compilation. Lastly, I thank Atreya Joshi and Ashwin Mahesh for the discussion and help on the usage of `Go` and its compilation.
+I thank João Ramos for his invaluable time discussing on the possible solutions for porting the original `Go` code and his efforts for making the `Go` code public. I thank Nicholas Howe for writing the Method 1 `MATLAB MEX` code and making it an open-source. I thank Aniketh Manjunath ([vma1996](https://github.com/vma1996)), who is also a co-author for the Python JIT version, for his invaluable time in optimizing the Method 2 Python code by JIT compilation. Lastly, I thank Atreya Joshi and Ashwin Mahesh for the discussion and help on the usage of `Go` and its compilation.
 
 # Feedback
 Please rate and provide feedback for the further improvements.
