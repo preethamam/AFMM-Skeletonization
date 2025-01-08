@@ -72,8 +72,8 @@ Binary image skeletonization algorithm based on the AFMM and Tolerance-based fea
 ```
 
 ## Original code repositories
-[1]. Nicholas Howe (2025). Better Skeletonization (https://www.mathworks.com/matlabcentral/fileexchange/11123-better-skeletonization), MATLAB Central File Exchange. Retrieved January 7, 2025. <br />
-[2]. João Ramos (2025). afmm (https://github.com/Joao-R/afmm), GitHub Repository. Retrieved January 7, 2025.
+[1]. Nicholas Howe (2025). [Better Skeletonization](https://www.mathworks.com/matlabcentral/fileexchange/11123-better-skeletonization), MATLAB Central File Exchange. Retrieved January 7, 2025. <br />
+[2]. João Ramos (2025). [afmm](https://github.com/Joao-R/afmm), GitHub Repository. Retrieved January 7, 2025.
 
 # Acknowledgements
 I thank João Ramos for his invaluable time discussing on the possible solutions for porting the original `Go` code and his efforts for making the `Go` code public. I thank Nicholas Howe for writing the Method 1 `MATLAB MEX` code and making it an open-source. I thank Aniketh Manjunath ([vma1996](https://github.com/vma1996)), who is also a co-author for the Python JIT version, for his invaluable time in optimizing the Method 2 Python code by JIT compilation. Lastly, I thank Atreya Joshi and Ashwin Mahesh for the discussion and help on the usage of `Go` and its compilation.
