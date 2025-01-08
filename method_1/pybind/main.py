@@ -34,7 +34,7 @@ def process_image(image_path):
 def main():
     
     # Image path
-    image_path = "../../images/crack2.png"
+    image_path = "../../images/crack.png"
     
     # Threshold for binary conversion
     threshold = 25
@@ -47,7 +47,7 @@ def main():
 
     # save a image using extension
     skeleton_thinned_pil = Image.fromarray(skeleton)
-    skeleton_thinned_pil.save("crack2_m1_pybind.png") 
+    skeleton_thinned_pil.save("crack_m1_pybind.png")
     
     # Visualize results        
     fig, axes = plt.subplots(2, 2, figsize=(7, 7))

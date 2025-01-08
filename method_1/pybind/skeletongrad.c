@@ -194,6 +194,10 @@ void compute_skeleton_gradient(const unsigned char *img, int nrow, int ncol,
         goto cleanup;
     }
 
+    for (i = 0; i < jnrow*jncol; i++) {
+        seenj[i] = false;
+    }
+
     // Register junctions
     ijunc = 0;
     for (j = 0; j < jncol; j++) {
@@ -395,22 +399,17 @@ cleanup:
 // Read image function
 unsigned char* read_image(const char* filename, int* nrow, int* ncol) {
     int channels;
+    // stb_image uses width,height order (ncol,nrow)
     unsigned char* img_data = stbi_load(filename, ncol, nrow, &channels, 1);
-    if (!img_data) {
-        fprintf(stderr, "Error: Could not load image %s\n", stbi_failure_reason());
-        return NULL;
-    }
-
-    // Convert to binary image (threshold at 128)
+    
+    // Need to transpose the data to match MATLAB's column-major order
     unsigned char* binary_img = (unsigned char*)malloc((*nrow) * (*ncol));
-    if (!binary_img) {
-        fprintf(stderr, "Error: Memory allocation failed\n");
-        stbi_image_free(img_data);
-        return NULL;
-    }
-
-    for (int i = 0; i < (*nrow) * (*ncol); i++) {
-        binary_img[i] = (img_data[i] > 128) ? 1 : 0;
+    
+    for (int j = 0; j < *ncol; j++) {
+        for (int i = 0; i < *nrow; i++) {
+            // Convert row-major to column-major during thresholding
+            binary_img[i + j*(*nrow)] = (img_data[i*(*ncol) + j] > 128) ? 1 : 0;
+        }
     }
 
     stbi_image_free(img_data);
@@ -419,27 +418,18 @@ unsigned char* read_image(const char* filename, int* nrow, int* ncol) {
 
 // Write image to disk
 int write_image(const char* filename, const unsigned char* img, int nrow, int ncol) {
-    // Convert binary image to 8-bit grayscale
     unsigned char* output_data = (unsigned char*)malloc(nrow * ncol);
-    if (!output_data) {
-        fprintf(stderr, "Error: Memory allocation failed\n");
-        return 0;
+    
+    // Convert from column-major back to row-major
+    for (int j = 0; j < ncol; j++) {
+        for (int i = 0; i < nrow; i++) {
+            output_data[i*ncol + j] = img[i + j*nrow] ? 255 : 0;
+        }
     }
 
-    for (int i = 0; i < nrow * ncol; i++) {
-        output_data[i] = img[i] ? 255 : 0;
-    }
-
-    // Write the image
     int success = stbi_write_png(filename, ncol, nrow, 1, output_data, ncol);
     free(output_data);
-
-    if (!success) {
-        fprintf(stderr, "Error: Could not write image %s\n", filename);
-        return 0;
-    }
-
-    return 1;
+    return success;
 }
 
 // Helper function to get current time

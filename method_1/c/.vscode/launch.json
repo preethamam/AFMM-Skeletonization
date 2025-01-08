@@ -7,7 +7,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/skelgrad.exe",
             "args": [
-                "${workspaceFolder}/mushroom.png", // input image
+                "${workspaceFolder}/keyhole.png", // input image
                 "${workspaceFolder}/output.png",   // output image
                 "25.0"                             // Change this threshold as needed
             ],

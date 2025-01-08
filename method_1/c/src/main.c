@@ -63,12 +63,11 @@ int main(int argc, char* argv[]) {
     double threshold = atof(argv[3]);
 
     int nrow, ncol;
-    // Using read_image from skeletongrad.c
+    // Using read_image with corrected dimension handling
     unsigned char* input_image = read_image(input_file, &nrow, &ncol);
     if (!input_image) {
         return 1;
     }
-
     printf("Image loaded: %dx%d pixels\n", nrow, ncol);
 
     // Allocate memory for output arrays
@@ -81,20 +80,17 @@ int main(int argc, char* argv[]) {
         free(input_image);
         free(skg);
         free(rad);
-        free(output_image); 
+        free(output_image);
         return 1;
     }
 
-    // Using get_time from skeletongrad.c
+    // Compute skeleton gradient
     printf("Computing skeleton gradient...\n");
     double start_time = get_time();
-    
-    // Using compute_skeleton_gradient from skeletongrad.c
     compute_skeleton_gradient(input_image, nrow, ncol, skg, rad);
-    
     double end_time = get_time();
     double elapsed_time = end_time - start_time;
-    
+
     printf("Computation time: %.3f seconds\n", elapsed_time);
     printf("Processing speed: %.2f megapixels/second\n", 
            (nrow * ncol) / (elapsed_time * 1e6));
@@ -104,7 +100,7 @@ int main(int argc, char* argv[]) {
         output_image[i] = (skg[i] > threshold) ? 1 : 0;
     }
 
-    // Using write_image from skeletongrad.c
+    // Write the output image
     if (!write_image(output_file, output_image, nrow, ncol)) {
         fprintf(stderr, "Error: Failed to write output image\n");
     } else {
@@ -112,18 +108,18 @@ int main(int argc, char* argv[]) {
         printf("Input: %s\n", input_file);
         printf("Output: %s\n", output_file);
         printf("Threshold: %f\n", threshold);
-        
-        // Print some statistics
+
+        // Print statistics
         int skeleton_pixels = 0;
         for (int i = 0; i < nrow * ncol; i++) {
             if (output_image[i]) skeleton_pixels++;
         }
-        printf("Skeleton pixels: %d (%.2f%% of image)\n", 
-               skeleton_pixels, 
+        printf("Skeleton pixels: %d (%.2f%% of image)\n",
+               skeleton_pixels,
                100.0 * skeleton_pixels / (nrow * ncol));
     }
 
-    // Free memory
+    // Cleanup
     free(input_image);
     free(skg);
     free(rad);

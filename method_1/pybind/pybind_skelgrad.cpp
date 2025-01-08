@@ -6,41 +6,63 @@
 namespace py = pybind11;
 
 // Main wrapper function for the skeleton gradient computation
-py::tuple compute_skeleton_gradient_py(py::array_t<unsigned char, py::array::c_style> input_img) {
-    // Get input array info
-    py::buffer_info buf_img = input_img.request();
+std::tuple<py::array_t<double>, py::array_t<double>> 
+compute_skeleton_gradient_py(py::array_t<uint8_t> input) {
+    // Get input buffer info
+    py::buffer_info buf = input.request();
     
-    if (buf_img.ndim != 2) {
-        throw std::runtime_error("Input image must be 2-dimensional");
+    // Check dimensions
+    if (buf.ndim != 2) {
+        throw std::runtime_error("Input must be a 2D array");
     }
+
+    // Get dimensions - numpy arrays are row-major by default
+    int nrow = buf.shape[0];  // height
+    int ncol = buf.shape[1];  // width
     
-    // Get dimensions
-    int nrow = buf_img.shape[0];
-    int ncol = buf_img.shape[1];
-    
-    // Create output arrays for skeleton gradient and radius
-    auto skg = py::array_t<double>(buf_img.size);
-    auto rad = py::array_t<double>(buf_img.size);
-    
-    py::buffer_info buf_skg = skg.request();
-    py::buffer_info buf_rad = rad.request();
+    // Create output arrays
+    auto skg = py::array_t<double>(buf.size);
+    auto rad = py::array_t<double>(buf.size);
     
     // Get pointers to data
-    unsigned char* img_ptr = static_cast<unsigned char*>(buf_img.ptr);
-    double* skg_ptr = static_cast<double*>(buf_skg.ptr);
-    double* rad_ptr = static_cast<double*>(buf_rad.ptr);
+    uint8_t* img_ptr = static_cast<uint8_t*>(buf.ptr);
+    double* skg_ptr = static_cast<double*>(skg.request().ptr);
+    double* rad_ptr = static_cast<double*>(rad.request().ptr);
+
+    // Create a temporary array with correct memory layout
+    unsigned char* img_col_major = new unsigned char[nrow * ncol];
     
-    // Call C function
-    compute_skeleton_gradient(img_ptr, nrow, ncol, skg_ptr, rad_ptr);
-    
-    // Reshape output arrays to match input dimensions
-    skg.resize({nrow, ncol});
-    rad.resize({nrow, ncol});
-    
-    // Return tuple of results
-    return py::make_tuple(skg, rad);
+    // Convert from row-major (numpy) to column-major (algorithm expects)
+    for (int j = 0; j < ncol; j++) {
+        for (int i = 0; i < nrow; i++) {
+            // Convert numpy's row-major to column-major
+            img_col_major[i + j*nrow] = img_ptr[i*ncol + j] > 0 ? 1 : 0;
+        }
+    }
+
+    // Call the original function
+    compute_skeleton_gradient(img_col_major, nrow, ncol, skg_ptr, rad_ptr);
+
+    // Convert output back from column-major to row-major
+    auto skg_rowmajor = py::array_t<double>({nrow, ncol});
+    auto rad_rowmajor = py::array_t<double>({nrow, ncol});
+    double* skg_row_ptr = static_cast<double*>(skg_rowmajor.request().ptr);
+    double* rad_row_ptr = static_cast<double*>(rad_rowmajor.request().ptr);
+
+    for (int j = 0; j < ncol; j++) {
+        for (int i = 0; i < nrow; i++) {
+            skg_row_ptr[i*ncol + j] = skg_ptr[i + j*nrow];
+            rad_row_ptr[i*ncol + j] = rad_ptr[i + j*nrow];
+        }
+    }
+
+    // Cleanup
+    delete[] img_col_major;
+
+    return std::make_tuple(skg_rowmajor, rad_rowmajor);
 }
 
+// Binding code
 PYBIND11_MODULE(pyskelgrad, m) {
     m.doc() = "Skeletonization module using augmented fast marching method";
     

@@ -31,7 +31,7 @@
             "type": "shell",
             "command": "${workspaceFolder}/skelgrad.exe",  // Full path to executable
             "args": [
-                "${workspaceFolder}/mushroom.png",     // Full path to input
+                "${workspaceFolder}/keyhole.png",     // Full path to input
                 "${workspaceFolder}/output.png",       // Full path to output
                 "25.0"
             ],
