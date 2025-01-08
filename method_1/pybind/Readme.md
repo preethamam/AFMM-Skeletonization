@@ -38,6 +38,9 @@ stb_image.h
 
 - Python 3.6 or higher
 - C++ compiler
+    - GCC (MinGW for Windows) or 
+    - MSYS2 (for Windows) or
+    - MSVC/Visual Studio Build Tools (for Windows)
 - [PyBind11](https://pybind11.readthedocs.io/en/stable/)
 - [NumPy](https://numpy.org/)
 - [Pillow](https://python-pillow.org/)

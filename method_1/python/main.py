@@ -11,14 +11,14 @@ from skeleton import compute_skeleton_gradient
 
 def main():
     # Load image
-    img_path = "../../images/bagel.png"
+    img_path = "../../images/example.png"
     # "../imgs/mushroom.png"
     # "../imgs/crack 2.png"
     # "../imgs/crack.bmp"
     img = Image.open(img_path)
 
     # Get skeleton
-    threshold = 20  # Adjust as needed
+    threshold = 100  # Adjust as needed
 
     # Convert to binary image
     if img.mode != "L":
@@ -48,7 +48,7 @@ def main():
     
     # save a image using extension
     skeleton_thinned_pil = Image.fromarray(skeleton_thinned)
-    skeleton_thinned_pil.save("bagel_m1_python.png")    
+    skeleton_thinned_pil.save("example_m1_python.png")    
 
     # Display images:  Create a figure with 2 subplots (1 row, 2 columns)
     fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2)
@@ -76,9 +76,6 @@ def main():
 
     plt.tight_layout()
     plt.show()
-
-    # Save the skeleton
-    # skeleton.save("skeleton.png")
 
 
 if __name__ == "__main__":

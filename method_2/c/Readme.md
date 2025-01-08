@@ -28,7 +28,7 @@ stb_image.h
 ## Prerequisites
 
 - CMake (version 3.10 or higher)
-- A C compiler (GCC, Clang, MSVC, etc.)
+- A C compiler (GCC, Clang, MSVC (Visual Studio Build Tools), etc.)
 - Python (for Cython compilation, if needed)
 
 ## Building the Project

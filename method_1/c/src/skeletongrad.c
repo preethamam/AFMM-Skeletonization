@@ -162,7 +162,7 @@ void compute_skeleton_gradient(const unsigned char *img, int nrow, int ncol,
     int jnrow = nrow+1, jncol = ncol+1;
     int njunc = 0, jhood, nedge = 0, nnear;
     int mindNE, mindNW, mindSE, mindSW;
-    int *jx, *jy, *edgej, *seqj, *edgelen;
+    int *jx, *jy, *edgej, *seqj, *edgelen = NULL;
     int *dNE, *dNW, *dSE, *dSW, *nearj;
     bool *seenj;
 
@@ -393,7 +393,9 @@ cleanup:
     free(dSE);
     free(dSW);
     free(nearj);
-    if (edgelen) free(edgelen);
+    if (edgelen) {  // Only free if not NULL
+        free(edgelen);
+    }
 }
 
 // Read image function

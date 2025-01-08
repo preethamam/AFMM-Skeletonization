@@ -32,6 +32,12 @@ skelgrad.pyx
 - `skelgrad.cpp`: C++ source file for the Cython extension.
 - `skelgrad.pyx`: Cython source file for the skeleton gradient computation.
 
+## Prerequisites
+
+- GCC (MinGW for Windows) or
+- MSYS2 (for Windows) or
+- MSVC/Visual Studio Build Tools (for Windows)
+
 ## Requirements
 
 - Python 3.12

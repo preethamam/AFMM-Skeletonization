@@ -32,6 +32,10 @@ skeleton.log
 
 ## Prerequisites
 
+- C++ compiler
+    - GCC (MinGW for Windows) or 
+    - MSYS2 (for Windows) or
+    - Visual Studio Build Tools (for Windows)
 - Python 3.12
 - Cython
 - Matplotlib
